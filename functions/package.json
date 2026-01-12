@@ -1,0 +1,9 @@
+{
+  "name": "sportmatch-functions",
+  "engines": { "node": "16" },
+  "type": "commonjs",
+  "dependencies": {
+    "firebase-admin": "^11.11.1",
+    "firebase-functions": "^3.24.0"
+  }
+}

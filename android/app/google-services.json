@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "892585150430",
+    "project_id": "sportmatch-236b1",
+    "storage_bucket": "sportmatch-236b1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892585150430:android:04e47f26f37e5672037f4f",
+        "android_client_info": {
+          "package_name": "com.example.sportmatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc6fZUuqFpV1Gtga62rldc_J9DMnsqsX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

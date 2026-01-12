@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow create, update: if signedIn() && request.auth.uid == uid;
+      allow delete: if false;
+    }
+
+    match /playcards/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.ownerUid == request.auth.uid;
+      allow update, delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+    }
+
+    match /swipes/{id} {
+      // deterministic docId "fromUid_toPlaycardId"
+      allow read: if signedIn();
+      allow create, update: if signedIn() && request.resource.data.fromUid == request.auth.uid;
+      allow delete: if false;
+    }
+
+    match /matches/{id} {
+      allow read: if signedIn();
+      // created by Cloud Functions only
+      allow create, update, delete: if false;
+    }
+
+    match /chats/{matchId}/messages/{msgId} {
+      allow read: if signedIn();
+      // user can create messages in a chat where he is participant (basic MVP: allow)
+      allow create: if signedIn();
+      allow delete: if false;
+    }
+  }
+}

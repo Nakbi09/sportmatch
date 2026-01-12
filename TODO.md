@@ -1,0 +1,14 @@
+- Update lib/services/auth.dart with try/catch for signInAnonymously
+- Replace lib/screens/chat_screen.dart with real-time chat implementation
+- Update lib/screens/create_playcard.dart with date/time picker and validation
+- Fix overlap function in lib/matching.dart
+- Add const and fallbacks in lib/models.dart
+- Update lib/screens/onboarding.dart with SetOptions(merge: true)
+- Create lib/screens/matches_list.dart
+- Update lib/screens/home_tabs.dart to include MatchesListScreen
+- Update firestore.rules with stricter rules
+- Update lib/main.dart with themeMode: ThemeMode.system
+- Create functions/package.json
+- Create functions/index.js for Cloud Function
+- Run flutter pub get
+- Deploy Cloud Functions
